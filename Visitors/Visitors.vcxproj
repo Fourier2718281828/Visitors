@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AcyclicVisitor.h" />
+    <ClInclude Include="CommonVisitor.h" />
     <ClInclude Include="VariantVisitor.h" />
   </ItemGroup>
   <ItemGroup>

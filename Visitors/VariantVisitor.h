@@ -17,27 +17,25 @@ namespace VariantVisitor
 
 		void operator()(const Type1&) const
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type1\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Variant Visitor: performing operation on Type1\n";
 #endif // EMPTY_OPERATIONS
 		}
 
 		void operator()(const Type2&) const
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type2\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Variant Visitor: performing operation on Type2\n";
 #endif // EMPTY_OPERATIONS
 		}
 
 		void operator()(const Type3&) const
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type3\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Variant Visitor: performing operation on Type3\n";
 #endif // EMPTY_OPERATIONS
 		}
 	};
-
-
 
 	void perform_operation_on(const std::vector<IType>& objs)
 	{

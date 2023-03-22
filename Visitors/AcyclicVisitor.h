@@ -19,6 +19,7 @@ namespace AcyclicVisitor
 		virtual ~AbstractVisitor() = default;
 	};
 
+	//Type abstraction
 	class IType
 	{
 	public:
@@ -27,7 +28,7 @@ namespace AcyclicVisitor
 		virtual void accept(AbstractVisitor*) = 0;
 	};
 
-	//Hierarchy of types
+	//Hierarchy of concrete types
 	class Type1 : public IType 
 	{
 	public:
@@ -58,7 +59,6 @@ namespace AcyclicVisitor
 		}
 	};
 
-
 	//Concrete visitor
 	class SomeVisitor : public AbstractVisitor
 		              , public Visitor<Type1>
@@ -69,26 +69,25 @@ namespace AcyclicVisitor
 
 		void visit(const Type1* const) const override
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type1\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Acyclic Visitor: performing operation on Type1\n";
 #endif // EMPTY_OPERATIONS
 		}
 
 		void visit(const Type2* const) const override
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type2\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Acyclic Visitor: performing operation on Type2\n";
 #endif // EMPTY_OPERATIONS
 		}
 
 		void visit(const Type3* const) const override
 		{
-#ifndef TESTING_EMPTY_FUNCTIONS
-			std::cout << "Performing operation on Type3\n";
+#ifndef NO_TIME_MEASURING
+			std::cout << "Acyclic Visitor: performing operation on Type3\n";
 #endif // EMPTY_OPERATIONS
 		};
 	};
-
 
 	void perform_operation_on(const std::vector<IType*>& objs)
 	{
